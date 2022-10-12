@@ -17,11 +17,28 @@ function List({ setTasks, tasks }) {
     let value = e.target.parentElement.parentElement.innerText; //to set the value of li
     tasks = tasks.filter((item) => item[0] !== value); //remove the clicked value on tasks
     setTasks([...tasks]); //reset the tasks
+    console.log(tasks);
     document.querySelector(
       ".total"
     ).innerText = `Total Remaining Task (${tasks.length}) and ${value} has just deleted.`; //to display the total remaining task  and deleted tasks
     initialValue = value; //to display the removed task list, we initialized initial value
-    document.querySelector(".total").classList.add("red")//ın order to better notice by user the color of the text changes  
+    document.querySelector(".total").classList.add("red"); //ın order to better notice by user the color of the text changes
+  };
+  //to clear all task
+  const clearAll = (e) => {
+    const num = tasks.length;
+    for (let i = 0; i < num; i++) {
+      console.log(document.querySelector(".task").innerText);
+      tasks = tasks.filter(
+        (item) => item[0] !== document.querySelector(".task").innerText
+      );
+      document.querySelector(".task").remove();
+    }
+    document.querySelector(
+      ".total"
+    ).innerText = `You have just deleted all tasks.`;
+    document.querySelector(".total").classList.add("red");
+    setTasks([...tasks]); //reset the tasks
   };
   //check button
   const check = (e) => {
@@ -42,16 +59,16 @@ function List({ setTasks, tasks }) {
         : (document.querySelector(
             ".completed"
           ).innerText = `You have completed ${counter} tasks.`); //ın order  to display completed result, ternary structure used
-      document.querySelector(".completed").classList.add("red")//ın order to better notice by user the color of the text changes  
+      document.querySelector(".completed").classList.add("red"); //ın order to better notice by user the color of the text changes
     } else {
       e.target.parentElement.parentElement.classList.remove("checked"); //if it has "checked" className it will remove and counter decrease
       completedValue = completedValue.filter(
         (item) => item != e.target.parentElement.parentElement.innerText
       );
-      console.log(completedValue);
       counter--;
-      if (counter ==0){//turn back to initial color 
-        document.querySelector(".completed").classList.remove("red")
+      if (counter == 0) {
+        //turn back to initial color
+        document.querySelector(".completed").classList.remove("red");
       }
       counter > 1
         ? (document.querySelector(
@@ -65,7 +82,7 @@ function List({ setTasks, tasks }) {
             ".completed"
           ).innerText = `Completed Task (${counter})`);
     } //ın order  to display completed result, ternary structure used
-    setTasks([...tasks]); //in order to initialize the whole list, reset tasks 
+    setTasks([...tasks]); //in order to initialize the whole list, reset tasks
   };
 
   return (
@@ -98,6 +115,11 @@ function List({ setTasks, tasks }) {
             </li>
           ))}
         </ol>
+        <div className="button">
+        <button type="button" className="btn btn-danger" onClick={clearAll}>
+          Clear All Remaining Tasks
+        </button>
+      </div>
         {/* result */}
         <div className="result row">
           <hr></hr>
@@ -110,6 +132,7 @@ function List({ setTasks, tasks }) {
         <CompletedTasks completed={completedValue} />
         <DeletedTask deleted={initialValue} />
       </div>
+    
     </div>
   );
 }

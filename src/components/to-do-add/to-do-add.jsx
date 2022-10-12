@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"; //useState and useEffect hooks used
-import "./to-do.scss"
+import "./to-do.scss";
 
 const initialValues = [];
 //probs are setTasks and tasks
@@ -21,7 +21,7 @@ function TodoAdd({ setTasks, tasks }) {
     if (list === []) {
       return false;
     }
-    setTasks([...tasks, list]); //add last input to the list
+    setTasks([...tasks, [list[0][0].toUpperCase() + list[0].slice(1)]]); //add last input to the list
     document.querySelector(".total").innerText = `Total Remaining Task (${
       document.querySelector(".list-group").childElementCount + 1
     }) and ${list[0][0].toUpperCase() + list[0].slice(1)} has just added.`;
@@ -32,7 +32,8 @@ function TodoAdd({ setTasks, tasks }) {
     if (list === []) {
       return false;
     }
-    setTasks([...tasks, list]); //add last input to the list
+    setTasks([...tasks, [list[0][0].toUpperCase() + list[0].slice(1)]]); //add last input to the list
+    console.log(tasks);
     document.querySelector(".total").innerText = `Total Remaining Task (${
       document.querySelector(".list-group").childElementCount + 1
     }) and ${list[0][0].toUpperCase() + list[0].slice(1)} has just added.`;
