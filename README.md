@@ -2,7 +2,7 @@
 
 ## Description
 
-Project aims to create a to do list app using React JavaScript Library. In this project will help you to understand useState and useEffect hooks and also probs and state definitions in any project. Furthermore, you will notice how components changed the expected outcome. 
+Project aims to create a to do list app using React JavaScript Library. This project will help you to understand useState and useEffect hooks and also probs and state definitions. Furthermore, you will notice how components changed the expected outcome. 
 
 ## Project Skeleton
 
