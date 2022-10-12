@@ -23,12 +23,12 @@ SOLUTION
 │    │       |── deleted_tasks
 │    │       |      ├── Deleted_tasks.jsx
 │    │       |      └── deleted_tasks.scss
-│    │       └── header
-│    │              └── Header.jsx
-│    │              └── header.scss
-│    │       └── list
-│    │              └── list.jsx
-│    │              └── list.scss
+│    │       |── header
+│    │       |      └── Header.jsx
+│    │       |      └── header.scss
+│    │       |── list
+│    │       |      └── list.jsx
+│    │       |      └── list.scss
 │    │       └── to-do-add
 │    │              └── to-do-add.jsx
 │    │              └── to-do-add.scss
