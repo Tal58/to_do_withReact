@@ -1,0 +1,40 @@
+.list-group-item{
+    display: flex;
+}
+.icons{
+    text-align: end;
+}
+.fa-solid{
+    padding: 0.5rem;
+    border: 2px solid red;
+    &:hover{
+        transform: scale(115%);
+        color: white;
+        background-color: aqua;
+    }
+}
+
+.checked{
+    text-decoration: line-through;
+}
+.counter{
+    color: red;
+}
+.result{
+    margin-top: 5%;
+    text-align: center;
+}
+.combo-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+.tasks, .combo{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.form-control{
+    margin-top: 3%;
+}
+.red{
+    color: red;
+}
+
