@@ -55,7 +55,7 @@ Build a To DO App using ReactJS.
 
 - ReactJS
 
--Sass
+- Sass
 
 ### At the end of the project, students will be able to;
 
